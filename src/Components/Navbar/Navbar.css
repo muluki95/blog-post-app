@@ -1,0 +1,26 @@
+.Nav{
+    background-color: #4c799b;
+    color:white;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 2rem;
+ 
+}
+ a{
+    color:white;
+    text-decoration: none;
+    margin-right: 3rem;
+}
+
+li{
+   
+    list-style: none;
+    text-decoration: none;
+}
+
+.blog-title{
+    font-size: 30px;
+}

@@ -1,0 +1,15 @@
+.post{
+    font-size: 20px;
+    margin: 20px;
+    padding: 20px;
+    border-bottom: 1px solid lightslategray;
+    height:100px;
+    
+}
+.post-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+
+}
