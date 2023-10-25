@@ -8,7 +8,7 @@ const Navbar = () => {
         <a href='/' className='blog-title'> My Blog Post</a>
         <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">All Posts</Link>
               <Link to="/addnewpost"> New Post</Link>
                 
             </li>

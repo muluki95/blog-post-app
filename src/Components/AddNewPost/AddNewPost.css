@@ -1,9 +1,10 @@
 .addnewpost{
+    font-size: 20px;
     padding: 1rem;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-bottom: 1px solid lightslategrey;
     
 }
 textarea{

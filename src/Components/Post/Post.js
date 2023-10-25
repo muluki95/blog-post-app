@@ -1,14 +1,18 @@
 import React from 'react';
 import './Post.css';
-import {MdDeleteForever} from 'react-icons/md';
+import {MdDeleteForever, MdEdit} from 'react-icons/md';
 
-const Post = () => {
+const Post = ({id, text, date, handleDeletePost}) => {
   return (
     <div className='post'>
-        <span> This is my 1st post </span>
+       
+        <span>{text}</span>
         <div className='post-footer'>
-            <small> 10/23/2023</small>
-            <MdDeleteForever  className='delete-icon' size='1.3rem'/>
+        <small>{date}</small>
+        <div className='icons'>
+           <MdEdit className='edit-icon' size='1.3rem'/>
+           <MdDeleteForever onClick={()=> handleDeletePost(id)} className='delete-icon' size='1.3rem'/>
+           </div>
         </div>
        
 
