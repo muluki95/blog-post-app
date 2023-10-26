@@ -3,7 +3,7 @@
     height: 40px;
     border-radius: 10px;
     border: none;
-    background-color: #92a0a5;
+    background-color: #e3f4fa;
     font-size: 20px;
    
      
@@ -11,7 +11,7 @@
 }
 .search-bar{
     width:80%;
-    background-color: #92a0a5;
+    background-color: #e3f4fa;
     display: flex;
     align-items:center;
     justify-content: space-between;

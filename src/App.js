@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import{nanoid} from "nanoid";
 import Navbar from "./Components/Navbar/Navbar";
 import Search from "./Components/Search/Search";
@@ -14,7 +14,20 @@ function App() {
 {id:nanoid(), text: 'This is the 3rd one this month',date: '10/21/2023'},
 
 ]);
+
 const [searchText, setSearchText]= useState('');
+
+useEffect(()=>{
+ const savedPosts =JSON.parse(localStorage.getItem('blog-post-app-data')
+ );
+ if (savedPosts) {
+  setPosts(savedPosts);
+ }
+}, []);
+
+useEffect(() => {
+   localStorage.setItem('blog-post-app-data', JSON.stringify(posts))//fetch data here and update posts state with fetched data.
+}, [posts])
 
 
 
@@ -32,21 +45,19 @@ const addNewPost =(text) => {
       const newPosts = posts.filter((post)=> post.id !==id);
       setPosts(newPosts)
     }
-    const editPost =(id) => {
-      const newPosts = posts
-    }
 
   return (
     <div className="App">
       <BrowserRouter>
 
      <Navbar/>
+     <Search handleSearchPost={setSearchText}/>
+
     
      <Routes>
-      <Route path='/' element={<Search handleSearchPost={setSearchText}/>}></Route>
       <Route path='/' element={<ListPost 
       posts={posts.filter((post)=> post.text.toLowerCase().includes(searchText))}
-      handleDeletePost={deletePost}/>
+      handleDeletePost={deletePost} />
        }> </Route>
       <Route path='/addnewpost' element={< AddNewPost handleAddNewPost={addNewPost}/>}></Route>
       </Routes>
@@ -55,6 +66,6 @@ const addNewPost =(text) => {
       
     </div>
   );
-}
+};
 
 export default App;
